@@ -35,7 +35,12 @@
 
 // YOUR CODE GOES BELOW HERE //
 function makeContact(id, nameFirst, nameLast) {
-
+    //make contact should return an object with persons contact info
+    return {
+        id: id,
+        nameFirst: nameFirst,
+        nameLast: nameLast,
+    }
 } 
 
 
@@ -43,12 +48,55 @@ function makeContactList() {
     /*
      * You need something here to hold contacts. See length api for a hint:
      */
-    var contacts;
+    var contacts = [];
     
     return {
         // we implemented the length api for you //
         length: function() {
             return contacts.length;
+        },
+        addContact: function(contact){
+            contacts.push(contact);
+        },
+//   3. findContact(fullName): takes a full-name String, like 'Max Gaudin', and 
+//  *   returns the contact object if found in the contacts-list, or, 
+//  *   undefined if the fullName does not match any contacts in the list.
+        findContact: function(fullName){
+            //loop through the contacts array
+            for (var i = 0; i < contacts.length; i++){
+                if (fullName === `${contacts[i].nameFirst} ${contacts[i].nameLast}`){
+                    return contacts[i];
+                }
+            }return undefined; 
+        },
+//  * 4. removeContact(contact): takes a contact object to be removed from 
+//  *   the contact-list
+        removeContact: function(contact){
+            //so loop through the contacts array and if the contact obj argument matches an existing contact we remove it with .splice
+            //splice has a starting point (an index location), and how many indexs to remove
+            for (var i = 0; i < contacts.length; i++){
+                if (contacts[i] === contact){
+                    contacts.splice(i, 1); 
+            }
+            }
+        },
+//  5. add a printAllContactNames() Function to your makeContactList() factory. The printAllContactNames() Function should 
+//  *return a String formated with all the full-names of the separated 
+//  *with a line-break, like so:
+//  *          
+//  *myContacts.printAllContactNames(); // => Max Gaudin
+//  *                                         John Fraboni
+//  *                                         Kaelyn Chresfield
+//  *          
+//  *          WARNING: To pass this test, the LAST full name should have NO
+//  *          new-line character added after it!
+        printAllContactNames: function(){
+           let names = []
+            //loop over the contacts array
+            for (var i = 0; i < contacts.length; i++){
+               names.push(`${contacts[i].nameFirst} ${contacts[i].nameLast}`) 
+            }
+            return names.join("\n");
         }
     }
 }

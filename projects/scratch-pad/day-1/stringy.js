@@ -150,10 +150,11 @@ function join(stringOne, stringTwo) {
  */
 function longest(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-if (stringOne.length > stringTwo.length){
-    return stringOne;
-}
- return stringTwo;
+// if (stringOne.length > stringTwo.length){
+//     return stringOne;
+// }
+//  return stringTwo;
+return stringOne.length > stringTwo.length ? stringOne : stringTwo;
 
     // YOUR CODE ABOVE HERE //
 }
@@ -167,12 +168,13 @@ if (stringOne.length > stringTwo.length){
  */
 function sortAscending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-if (stringOne === stringTwo){
-    return 0;
-} else if (stringOne > stringTwo){
-    return -1;
-}
-    return 1; 
+// if (stringOne === stringTwo){
+//     return 0;
+// } else if (stringOne > stringTwo){
+//     return -1;
+// }
+//     return 1; 
+return stringOne === stringTwo ? 0 :(stringOne < stringTwo ? 1 : -1);
 
     // YOUR CODE ABOVE HERE //
 }

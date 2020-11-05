@@ -23,9 +23,26 @@
  */
 function range(start, end) {
     // YOUR CODE GOES BELOW HERE //
-    
-    
-    
+    //input : start and end both are numbers
+    //output: an array between the parameters including the parameters
+    //Edge case: if start is greater than end, return the range in reverse order
+    //create an array literal to hold the return values
+    var values = [];
+    //edge case: if start is smaller than end value, increment loop and push i into values array
+    //be sure the code in inclusive of the start and end parameters
+    if (start < end){
+        for (var i = start; i <= end; i++){
+         values.push(i)   
+        } 
+     //edge case: if start is larger than end value, decrement loop and push i into values array
+    //be sure the code in inclusive of the start and end parameters
+    } else if (start > end){
+        for (var i = start; i >=end; i--){
+            values.push(i);
+    }
+    }
+    //finally, return the new array 
+    return values;
     
     // YOUR CODE GOES ABOVE HERE //
 }

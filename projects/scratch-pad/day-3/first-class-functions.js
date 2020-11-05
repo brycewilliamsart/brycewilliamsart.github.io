@@ -13,8 +13,17 @@
  */
 function createGreaterThanFilter(base) {
     // YOUR CODE BELOW HERE //
+    // return function(value){
+    //     if (value > base){
+    //         return true;
+    //     } return false; 
+    // };
     
+    // return function(value){
+    //     return value > base ? true : false;
+    // }
     
+    return (value) => {return value > base ? true : false}; 
     
     
     // YOUR CODE ABOVE HERE //
@@ -27,9 +36,13 @@ function createGreaterThanFilter(base) {
  */
 function createLessThanFilter(base) {
     // YOUR CODE BELOW HERE //
+    // return function(value){
+    //     if(value < base){
+    //         return true;
+    //     }return false;
+    // }
     
-    
-    
+    return (value) => {return base > value ? true : false};
     
     // YOUR CODE ABOVE HERE //
 }
@@ -41,8 +54,12 @@ function createLessThanFilter(base) {
  */
 function createStartsWithFilter(startsWith) {
     // YOUR CODE BELOW HERE //
-    
-    
+    return function(string){
+        if (startsWith.toLowerCase() === string[0].toLowerCase()){
+            return true;
+        }return false;
+    }
+
     
     
     // YOUR CODE ABOVE HERE //
@@ -55,7 +72,11 @@ function createStartsWithFilter(startsWith) {
  */
 function createEndsWithFilter(endsWith) {
     // YOUR CODE BELOW HERE //
-    
+    return function(string){
+        if (endsWith.toLowerCase() === string[string.length-1].toLowerCase()){
+            return true;
+        }return false;
+    }
     
     
     
@@ -71,9 +92,17 @@ function createEndsWithFilter(endsWith) {
  */
 function modifyStrings(strings, modify) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
+    //create an array to hold the return values
+    let arr = [];
+    //loop and add the modifyed strings into the new array
+    for (var i = 0; i < strings.length; i++){
+        //modify is a function that will in some way alter the data in the array
+        //passing each indiviual element of the array into the function 
+        //will change the values and add the new values to the new array
+        arr.push(modify(strings[i]));
+    }
+    //return the array
+    return arr;
     
     // YOUR CODE ABOVE HERE //
 }
@@ -89,7 +118,11 @@ function modifyStrings(strings, modify) {
  */
 function allStringsPass(strings, test) {
     // YOUR CODE BELOW HERE //
-    
+    for (var i = 0; i < strings.length; i++){
+        if (test(strings[i]) === false){
+            return false
+        } 
+    } return true;
     
     
     
