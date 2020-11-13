@@ -92,7 +92,7 @@ animals.push(duck);
 //they must each have two sounds
 var dragon ={
     species: 'dragon', 
-    name: 'Smaog', 
+    name: 'Smaug', 
     noises: ['ROAR', 'Fire']
 };
 
@@ -113,9 +113,10 @@ var friends = [];
 //It takes an index from the friends list
 function getRandom(animals){
     let friend = animals[Math.floor(Math.random() * animals.length)];
+    //add a random animal to the friends array
     return friends.push(friend)
 }
-//add a random animal to the friends array
+//assign the friends array to one of the animals in the animals array
 animals[0].friends = friends; 
 
 /**

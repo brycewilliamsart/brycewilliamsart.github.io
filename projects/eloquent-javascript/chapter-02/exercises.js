@@ -2,16 +2,41 @@
 ////////////////////////////////////////////////////////////////////////////////
 // triangles ///////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
-
-function triangles() {
+//create a function that prints a # trianlge
+//it should work with any number
+/**
+ * function triangle(5) =>
+ * #
+ * ##
+ * ###
+ * ####
+ * #####
+ */
+function triangles(num) {
+  //print a "#" on a new line for each iteration
+  for (var i = '#'; i.length <=num; i+= '#'){
+    console.log(i)
+  }
 
 }
 ////////////////////////////////////////////////////////////////////////////////
 // fizzBuzz ////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
-
-function fizzBuzz() {
-  
+//create a function that prints numbers 1 -100
+// it prints 'fizz' for numbers disivble by 3
+// 'buzz' if the number is divisable by 5, and 'fizzbuzz' if divisible by 15
+function fizzBuzz(start, end) {
+  //start with a loop 
+  for (var i = start; i <= end; i++){
+     // use a conditional statement to test the numbers
+    if (i % 15 === 0){
+      console.log('fizzbuzz')
+    } else if (i % 5 === 0){
+      console.log('buzz')
+    } else if(i % 3 === 0){
+      console.log('fizz')
+    } else {console.log(i)}
+  } 
 }
 
 ////////////////////////////////////////////////////////////////////////////////
